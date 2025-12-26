@@ -3,19 +3,25 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/index.css">
         <title>Mini Message Board</title>
     </head>
     <body>
         <div class="container">
-            <div class="header"></div>
-            <div class="board">
-                <% messages.forEach(message => { %>
-                    <div class="message-card">
-                        <div class="message-text"><%= message.text %></div>
-                        <div class="message-writer"><%= message.user %></div>
-                        <div class="message-time"><%= message.added %></div>
-                    </div>
-                <% }) %>
+            <div class="board-container">
+                <div class="header"><h2>Mini board</h2></div>
+                <div class="board">
+                    <% messages.forEach(message => { %>
+                        <div class="message-card">
+                            <div class="message-text"><%= message.text %></div>
+                            <div class="message-writer"><%= message.user %></div>
+                            <div class="message-time"><%= message.added %></div>
+                        </div>
+                    <% }) %>
+                </div>
+                <div class="buttons-div">
+                    <button type="button" onclick="window.location.href='/new'">Add Comment!</button>
+                </div>
             </div>
         </div>
         

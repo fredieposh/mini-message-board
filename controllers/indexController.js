@@ -10,4 +10,22 @@ function renderIndexPage(req, res) {
     res.render('index', { messages });
 };
 
-module.exports = renderIndexPage;
+function getMessages() {
+    return messages;
+};
+
+function addMessage({ name, comment }) {
+
+    messages.push({
+        text: comment,
+        user: name,
+        added: new Date(),
+    });
+
+};
+
+module.exports = {
+    renderIndexPage,
+    getMessages,
+    addMessage,
+}
